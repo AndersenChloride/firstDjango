@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Моя дата{% endblock %}
+
+{% block content %}
+    <div class = "features">
+       <h1>Моя дата</h1>
+       {% if data %}
+           {% for el in data %}
+               <div class = "alert alert-warning" >
+                   <h3 width = '100px'> {{ el.name }}</h3>
+                   <p>{{ el.maker }}<p>
+               </div>
+           {% endfor %}
+        {% else %}
+        <p> Лекарства отсутствуют </p>>
+        {% endif %}
+
+    </div>
+{% endblock %}
+

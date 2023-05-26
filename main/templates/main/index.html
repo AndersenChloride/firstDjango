@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+<div class = "features">
+    <h1>Додзе Тайги</h1>
+    <p>На этой странице творится полный хаос</p>
+    <buttton class = "btn btn-danger"> Кнопка самоуничтожения </buttton>
+    {% for el in values %}
+        {% if el == 'hello'  %}
+            {% filter upper %}
+                <p>{{ el }}<p>
+            {% endfilter %}
+        {% endif %}
+    {% endfor %}
+
+</div>
+{% endblock %}
+

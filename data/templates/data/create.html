@@ -1,0 +1,45 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Добавление лекарств{% endblock %}
+
+{% block content %}
+      <table>
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Drugs</th>
+          <th>Pharmacy</th>
+          <th>Price</th>
+          <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for el in store %}
+        <tr>
+          <td>{{ el.id_store }}</td>
+          <td>{{ el.id_dr }}</td>
+          <td>{{ el.id_ph }}</td>
+          <td>{{ el.price }}</td>
+          <td>{{ el.amount }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
+
+
+    <div class = "features">
+      <h1 class="inp">Добавление лекарств</h1>
+        <form class="create" method="POST" >
+            {% csrf_token %}
+            <input type="number" name="id">
+            {{ form.id_dr }}<br>
+            {{ form.id_ph }}<br>
+            {{ form.price }}<br>
+            {{ form.amount}}<br>
+            {{ form.else }}<br>
+            <span> {{ error }} </span>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+    </div>
+{% endblock %}

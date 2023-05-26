@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+  <h2 f>Login</h2>
+  <hr>
+
+  {% if form.errors %}
+    <p>{{ form.errors.error }}</p>
+  {% endif %}
+  <div class="log">
+  <form class="log" action="{% url 'login'  %}" method ="post">
+    {{ form }}
+    {% csrf_token %}
+    <button type="submit">Принять</button>
+  </form>
+  </div>
+{% endblock %}
